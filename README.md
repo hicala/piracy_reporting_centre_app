@@ -1,6 +1,11 @@
-# Web Scraping using Beautiful Soup
+# 21st Century Pairacy Phenomenon. Exploring Contemporary Sea Piracy
 
 ## Summary
+
+In this study the main goal is to evalaute the concentracion of the modern piracy incidents around the world.
+Modern-day pirates around the world share the legal designation of their historic brethren as “enemies of all mankind”  because they disrupt and hinder the safe navigation of maritime vessels containing goods and people. 
+
+Piracy is a global crime which impedes the free movement of ships containing people and goods, with its attendant economic ramifications. The perpetrators are usually heavily armed, with sophisticated weapons to enable them to hijack a vessel or vessels and redirect them to their desired location for the payment of an expected ransom.
 
 I am using Beautiful Soup for the this Python app. Beautiful Soup is a Python library for parsing data out of HTML and XML files (aka webpages). It works with your favorite parser to provide idiomatic ways of navigating, searching, and modifying the parse tree. 
 
