@@ -1,4 +1,4 @@
-# 21st Century Piracy Phenomenon. Exploring Contemporary Sea Piracy
+# The 21st Century Piracy Phenomenon. Exploring Contemporary Sea Piracy
 
 ## Summary
 
