@@ -1,7 +1,56 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[98]:
+# # The 21st Century Piracy Phenomenon. Exploring Contemporary Sea Piracy
+# 
+# ## Summary
+# 
+# In this study the main goal is to evaluate the concentrations of the modern piracy incidents around the world.
+# Modern-day pirates around the world share the legal designation of their historic brethren as “enemies of all mankind” because they disrupt and hinder the safe navigation of maritime vessels containing goods and people. 
+# 
+# Piracy is a global crime which impedes the free movement of ships containing people and goods, with its attendant economic ramifications. The perpetrators are usually heavily armed, with sophisticated weapons to enable them to hijack a vessel or vessels and redirect them to their desired location for the payment of an expected ransom.
+# 
+# I am using Beautiful Soup for this Python app. Beautiful Soup is a Python library for parsing data out of HTML and XML files (aka webpages). It works with your favorite parser to provide idiomatic ways of navigating, searching, and modifying the parse tree. 
+# 
+# The major concept with Beautiful Soup is that it allows you to access elements of your page by following the CSS structures, such as grabbing all links, all headers, specific classes, or more. It is a powerful library. Once we grab elements, Python makes it easy to write the elements or relevant components of the elements into other files, such as a CSV, that can be stored in a database or opened in other software.
+# 
+# The data I used came from Live Piracy & Armed Robbery Report 2020. Reference: https://www.icc-ccs.org/index.php/piracy-reporting-centre/live-piracy-report
+# 
+# ![Home Page](images/home.png)
+# 
+# ## Main goal
+# 
+# + To access all of the content from the source code of the webpage with Python
+# + Parse and extract data. 
+# + Save the info in CSV file for further analysis.
+# 
+# ## Methodology
+# 
+# 1. Import Modules
+# 2. Get the URL link
+# 3. Navigate the URL Data Structure
+# 4. Testing out data requests
+# 5. Write data to a file in pseudo-code:
+#     + Open up a file to write in and append data. 
+#     + Write headers
+#     + Clear HTML tag and insert text in array
+#     + Clear \r \n \t to prepare string variable to clear Narrations: and insert text in array
+#     + Prepare string variables Date, Time, Position, Area and Country, replace characters to insert character | and insert text in array
+#     + Split to elements to array results for character | and Write to file items Date, Time, Position, Area and Country
+#     + When complete, close the file
+# 6. The output file in CSV format.
+# 
+# ## Data info extracted:
+# 
+# Date, Time, Position, Area and Country of Live Piracy & Armed Robbery Report 2020
+
+# ![piracy reporting centre](images/piracy_reporting_centre.png)
+
+# If you don't have Beautiful Soup, install with 'conda install beautifulsoup' in terminal.
+# 
+# Python requires us to explicitly load the libraries that we want to use:
+
+# In[2]:
 
 
 # If you don't have Beautiful Soup, install with 'conda install beautifulsoup' in terminal
@@ -11,14 +60,18 @@ import bs4
 import re
 
 
-# In[99]:
+# Load a webpage into python so that we can parse it and manipulate it.
+
+# In[3]:
 
 
 # Load a webpage into python so that we can parse it and manipulate it.
 URL = 'https://www.icc-ccs.org/index.php/piracy-reporting-centre/live-piracy-report'
 
 
-# In[100]:
+# Control of Connection. We just turned the website code into a Python object. 
+
+# In[4]:
 
 
 # Control of Connection
@@ -27,21 +80,29 @@ response = requests.get(URL)
 soup = bs4.BeautifulSoup(response.text, "html.parser")
 
 
-# In[101]:
+# Find all the tags with class narrations
+
+# In[5]:
 
 
-# find all the tags with class city or number
+# find all the tags with class narrations
 data = soup.findAll(attrs={'class':['jos_fabrik_icc_ccs_piracymap2016___narrations']})
 
 
-# In[102]:
+# ![Source Code HTML](images/code.png)
+
+# Open new file, make sure path to your data file is correct.
+# 
+# Later, I write headers
+
+# In[6]:
 
 
 f = open('piracy_reporting_centre.csv','w') # open new file, make sure path to your data file is correct
 f.write("Date\tTime\tPosition\tArea\tCountry" + "\n") # write headers
 
 
-# In[103]:
+# In[7]:
 
 
 # Clear HTML tag and insert text in array
@@ -52,7 +113,7 @@ for element in data:                      # Itera sobre el arreglo data
      results.append(text)                 # Insert text in array
 
 
-# In[104]:
+# In[8]:
 
 
 # Clear \r \n \t to prepare string variable to clear Narrations: and insert text in array
@@ -70,7 +131,7 @@ for element in results:   # Itera sobre el arreglo results de la celda anterior
                 if i <= 5: results_2.append(result) # Guarda los elementos donde despues se pueden extraer Date, Time, Position, Area and Country 
 
 
-# In[105]:
+# In[9]:
 
 
 # Prepare string variables Date, Time, Position, Area and Country, replace characters to insert character | and insert text in array
@@ -94,7 +155,7 @@ for element in results_2:  # Itera sobre el arreglo results_2
         i = 0                   # Pone  en 0 para poder tomar los sgtes 5 elementos del arreglos results_2 donde estan los elementos utiles a extraer
 
 
-# In[106]:
+# In[10]:
 
 
 # Split to elements to array results for character | and Write to file items Date, Time, Position, Area and Country
@@ -120,15 +181,17 @@ for element in results:
                 f.write(country + "\t\n") # fecha country and add tabulator                
 
 
-# In[107]:
+# In[11]:
 
 
 # Close file
 f.close() # close file
 
 
-# In[ ]:
+# ![cvs data](images/cvs.png)
 
-
-
-
+# ## Conclusiones
+# 
+# We used Beautiful Soup as the main tool. The major concept with Beautiful Soup is that it allows you to access elements of your page by following the CSS structures, such as grabbing all links, all headers, specific classes, or more. It is a powerful library.
+# 
+#  Once we grab elements, Python makes it easy to write the elements or relevant components of the elements into other files, such as a CSV, that can be stored in a database or opened in other software.
