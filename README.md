@@ -95,13 +95,6 @@ f.write("Date\tTime\tPosition\tArea\tCountry" + "\n") # write headers
 ```
 
 
-
-
-    32
-
-
-
-
 ```python
 # Clear HTML tag and insert text in array
 results = []                              # Inicializa arreglo results
@@ -179,7 +172,7 @@ for element in results:
 
 ```python
 # Close file
-f.close() # close file
+f.close()
 ```
 
 ![cvs data](images/cvs.png)
