@@ -116,8 +116,8 @@ for element in data:                      # Iterate over the data array
 # Clear \r \n \t to prepare string variable to clear Narrations: and insert text in array
 results_explode = []      # Initialize results_explode array
 results_2 = []            # Inicializa arreglo results_2
-for element in results:   # Itera sobre el arreglo results de la celda anterior
-     item = ''            # Inicializa item
+for element in results:   # Iterate over the results array of the previous cell
+     item = ''            # Initialize item
      item = str(element)  # Le asigna el valor de item a cada elemento del arreglo results
      item = item.replace('\r', '').replace('\n', '').replace('\t', '') # Reemplaza de item \r, \n, \t para limpiar cadena y poder trabajar mejor en ella
      if item != 'Narrations:':                 # Se utiliza para limpiar de la cadena la cadena Narrations:
