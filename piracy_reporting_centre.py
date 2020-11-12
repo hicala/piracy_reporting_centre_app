@@ -151,8 +151,8 @@ for element in results_2:  # Iterate over the results_2 array
         country = str(element)     # Take country element plus other strings
         item = date.replace(': Posn : ', '|').replace(': Posn: ', '|').replace(': ', '|') + '.' + position.replace(' – ', '|') + '.' + country.replace('E, ', 'E|').replace('W, ', 'W|')
         item = item.replace('N – ', 'N|').replace('W, ', 'W|') # Performs replacement of : Posn : for |, : Posn: for |, : for |,  –  for |, E, for E|, W, for W| to form a line where the elements are well delimited Date, Time, Position, Area and Country by the separator |  
-        results.append(item)    # Adiciona la linea donde estan bien delimitados los elemento Date, Time, Position, Area and Country por el separador | al arreglo results
-        i = 0                   # Pone  en 0 para poder tomar los sgtes 5 elementos del arreglos results_2 donde estan los elementos utiles a extraer
+        results.append(item)    # Add the line where the elements are well delimited Date, Time, Position, Area and Country by the separator | to the array results
+        i = 0                   # Puts on 0 to be able to take the following 5 results_2 array elements where are the useful elements to extract
 
 
 # In[10]:
@@ -160,19 +160,19 @@ for element in results_2:  # Iterate over the results_2 array
 
 # Split to elements to array results for character | and Write to file items Date, Time, Position, Area and Country
 for element in results:
-       item = element.split("|") # Realiza explode por el caracter | para quedarnos con los elementos Date, Time, Position, Area and Country
+       item = element.split("|") # Perform explode by character | to keep the elements Date, Time, Position, Area and Country
        i = 0
        for element1 in item:
             i = i + 1
             if i == 1: 
                 date = str(element1)
-                f.write(date + "\t") # fecha date and add tabulator
+                f.write(date + "\t") # Write date and add tabulator
             if i == 2: 
                 time = str(element1)
-                f.write(time + "\t") # fecha time and add tabulator
+                f.write(time + "\t") # Write time and add tabulator
             if i == 3: 
                 position = str(element1)
-                f.write(position + "\t") # fecha position and add tabulator
+                f.write(position + "\t") # Write position and add tabulator
             if i == 4: 
                 area = str(element1)
                 f.write(area + "\t") # fecha area and add tabulator
@@ -185,7 +185,7 @@ for element in results:
 
 
 # Close file
-f.close() # close file
+f.close()
 
 
 # ![cvs data](images/cvs.png)
