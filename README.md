@@ -133,14 +133,14 @@ for element in results:   # Iterate over the results array of the previous cell
 # Prepare string variables Date, Time, Position, Area and Country, replace characters to insert character | and insert text in array
 i = 0                      # i
 results = []               # Initialize array results
-for element in results_2:  # Itera sobre el arreglo results_2
+for element in results_2:  # Iterate over the results_2 array
     i = i + 1
     if i == 1: 
-        data1 = str(element)  # toma elemento data1 para conformar la fecha
+        data1 = str(element)  # take element data1 to make up the date
     if i == 2: 
-        data2 = str(data1) + '.' + str(element) # toma elemento data1 y concatena str(element) para conformar la fecha
+        data2 = str(data1) + '.' + str(element) # take element data1 and concatenate str (element) to make up the date
     if i == 3: 
-        date = data2 + '.' + str(element) # toma elemento date mas otras cadenas y concatena str(element) para conformar la fecha
+        date = data2 + '.' + str(element) # take date element plus other strings and concatenate str (element) to make up the date
     if i == 4: 
         position = str(element)    # toma elemento position mas otras cadenas
     if i == 5: 
