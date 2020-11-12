@@ -175,10 +175,10 @@ for element in results:
                 f.write(position + "\t") # Write position and add tabulator
             if i == 4: 
                 area = str(element1)
-                f.write(area + "\t") # fecha area and add tabulator
+                f.write(area + "\t") # Write area and add tabulator
             if i == 5: 
                 country = str(element1)
-                f.write(country + "\t\n") # fecha country and add tabulator                
+                f.write(country + "\t\n") # Write country and add tabulator                
 
 
 # In[11]:
