@@ -3,7 +3,7 @@
 ## Summary
 
 In this study the main goal is to evaluate the concentrations of the modern piracy incidents around the world.
-Modern-day pirates around the world share the legal designation of their historic brethren as “enemies of all mankind” because they disrupt and hinder the safe navigation of maritime vessels containing goods and people. 
+Modern-day pirates around the world share the legal designation of their historic brethren as “enemies of all mankind” because they disrupt and hinder the safe navigation of maritime vessels containing goods and people.
 
 Piracy is a global crime which impedes the free movement of ships containing people and goods, with its attendant economic ramifications. The perpetrators are usually heavily armed, with sophisticated weapons to enable them to hijack a vessel or vessels and redirect them to their desired location for the payment of an expected ransom.
 
@@ -18,7 +18,7 @@ The data I used came from Live Piracy & Armed Robbery Report 2020. Reference: ht
 ## Main goal
 
 + To access all of the content from the source code of the webpage with Python
-+ Parse and extract data.
++ Parse and extract data. 
 + Save the info in CSV file for further analysis.
 
 ## Methodology
@@ -95,19 +95,26 @@ f.write("Date\tTime\tPosition\tArea\tCountry" + "\n") # write headers
 ```
 
 
+
+
+    32
+
+
+
+
 ```python
 # Clear HTML tag and insert text in array
-results = []                              # Inicializa arreglo results
-for element in data:                      # Itera sobre el arreglo data
-     TAG_RE = re.compile(r'<[^>]+>')      # Prepara patron para limpiar tag html de las cadenas str(element)
-     text = TAG_RE.sub('', str(element))  # Aplica patron y limpia tag html de text
+results = []                              # Initialize array results
+for element in data:                      # Iterate over the data array
+     TAG_RE = re.compile(r'<[^>]+>')      # Prepare pattern to clean html tag from str (element) strings
+     text = TAG_RE.sub('', str(element))  # Apply pattern and clean text html tag
      results.append(text)                 # Insert text in array
 ```
 
 
 ```python
 # Clear \r \n \t to prepare string variable to clear Narrations: and insert text in array
-results_explode = []      # Inicializa arreglo results_explode
+results_explode = []      # Initialize results_explode array
 results_2 = []            # Inicializa arreglo results_2
 for element in results:   # Itera sobre el arreglo results de la celda anterior
      item = ''            # Inicializa item
@@ -172,7 +179,7 @@ for element in results:
 
 ```python
 # Close file
-f.close()
+f.close() # close file
 ```
 
 ![cvs data](images/cvs.png)
