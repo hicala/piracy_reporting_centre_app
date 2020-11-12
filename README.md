@@ -136,17 +136,17 @@ results = []               # Initialize array results
 for element in results_2:  # Iterate over the results_2 array
     i = i + 1
     if i == 1: 
-        data1 = str(element)  # take element data1 to make up the date
+        data1 = str(element)  # Take element data1 to make up the date
     if i == 2: 
-        data2 = str(data1) + '.' + str(element) # take element data1 and concatenate str (element) to make up the date
+        data2 = str(data1) + '.' + str(element) # Take element data1 and concatenate str (element) to make up the date
     if i == 3: 
         date = data2 + '.' + str(element) # take date element plus other strings and concatenate str (element) to make up the date
     if i == 4: 
-        position = str(element)    # toma elemento position mas otras cadenas
+        position = str(element)    # Take element position plus other strings
     if i == 5: 
-        country = str(element)     # toma elemento country mas otras cadenas
+        country = str(element)     # Take country element plus other strings
         item = date.replace(': Posn : ', '|').replace(': Posn: ', '|').replace(': ', '|') + '.' + position.replace(' – ', '|') + '.' + country.replace('E, ', 'E|').replace('W, ', 'W|')
-        item = item.replace('N – ', 'N|').replace('W, ', 'W|') # Realiza reeplazo de : Posn : por |, : Posn: por |, : por |,  –  por |, E, por E|, W, por W| para conformar una linea donde estan bien delimitados los elemento Date, Time, Position, Area and Country por el separador |  
+        item = item.replace('N – ', 'N|').replace('W, ', 'W|') # Performs replacement of : Posn : for |, : Posn: for |, : for |,  –  for |, E, for E|, W, for W| to form a line where the elements are well delimited Date, Time, Position, Area and Country by the separator |  
         results.append(item)    # Adiciona la linea donde estan bien delimitados los elemento Date, Time, Position, Area and Country por el separador | al arreglo results
         i = 0                   # Pone  en 0 para poder tomar los sgtes 5 elementos del arreglos results_2 donde estan los elementos utiles a extraer
 ```
