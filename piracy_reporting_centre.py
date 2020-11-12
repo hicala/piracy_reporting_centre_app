@@ -123,12 +123,12 @@ for element in results:   # Iterate over the results array of the previous cell
      item = ''            # Initialize item
      item = str(element)  # Assigns the value of item to each element of the results array
      item = item.replace('\r', '').replace('\n', '').replace('\t', '') # Replace item \r, \n, \t to clean string and work better on it
-     if item != 'Narrations:':                 # Se utiliza para limpiar de la cadena la cadena Narrations:
-          results_explode = item.split(".")    # Realiza explode por el . para quedarnos con los elementos de la primera linea donde estan Date, Time, Position, Area and Country y eliminar el parrafo que tiene a continuacion la linea 
-          i = 0                                # Inicializa i
-          for result in results_explode:       # Itera sobre el arreglo results_explode
+     if item != 'Narrations:':                 # Used to clean the Narrations: chain from the string:
+          results_explode = item.split(".")    # Perform explode for him. to keep the elements of the first line where they are Date, Time, Position, Area and Country and eliminate the paragraph that follows the line
+          i = 0                                # Initialize i
+          for result in results_explode:       # Iterate over the results_explode array
                 i = i + 1
-                if i <= 5: results_2.append(result) # Guarda los elementos donde despues se pueden extraer Date, Time, Position, Area and Country 
+                if i <= 5: results_2.append(result) # Save the elements where they can later be extracted Date, Time, Position, Area and Country 
 
 
 # In[9]:
@@ -136,7 +136,7 @@ for element in results:   # Iterate over the results array of the previous cell
 
 # Prepare string variables Date, Time, Position, Area and Country, replace characters to insert character | and insert text in array
 i = 0                      # i
-results = []               # Inicializa arreglo results
+results = []               # Initialize array results
 for element in results_2:  # Itera sobre el arreglo results_2
     i = i + 1
     if i == 1: 
