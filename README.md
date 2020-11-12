@@ -118,8 +118,8 @@ results_explode = []      # Initialize results_explode array
 results_2 = []            # Inicializa arreglo results_2
 for element in results:   # Iterate over the results array of the previous cell
      item = ''            # Initialize item
-     item = str(element)  # Le asigna el valor de item a cada elemento del arreglo results
-     item = item.replace('\r', '').replace('\n', '').replace('\t', '') # Reemplaza de item \r, \n, \t para limpiar cadena y poder trabajar mejor en ella
+     item = str(element)  # Assigns the value of item to each element of the results array
+     item = item.replace('\r', '').replace('\n', '').replace('\t', '') # Replace item \r, \n, \t to clean string and work better on it
      if item != 'Narrations:':                 # Se utiliza para limpiar de la cadena la cadena Narrations:
           results_explode = item.split(".")    # Realiza explode por el . para quedarnos con los elementos de la primera linea donde estan Date, Time, Position, Area and Country y eliminar el parrafo que tiene a continuacion la linea 
           i = 0                                # Inicializa i
