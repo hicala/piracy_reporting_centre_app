@@ -95,13 +95,6 @@ f.write("Date\tTime\tPosition\tArea\tCountry" + "\n") # write headers
 ```
 
 
-
-
-    32
-
-
-
-
 ```python
 # Clear HTML tag and insert text in array
 results = []                              # Initialize array results
