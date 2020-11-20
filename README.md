@@ -18,7 +18,7 @@ The data I used came from Live Piracy & Armed Robbery Report 2020. Reference: ht
 ## Main goal
 
 + To access all of the content from the source code of the webpage with Python
-+ Parse and extract data. 
++ Parse and extract data.
 + Save the info in CSV file for further analysis.
 
 ## Methodology
