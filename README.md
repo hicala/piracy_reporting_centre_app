@@ -28,7 +28,7 @@ The data I used came from Live Piracy & Armed Robbery Report 2020. Reference: ht
 3. Navigate the URL Data Structure
 4. Testing out data requests
 5. Write data to a file in pseudo-code:
-    + Open up a file to write in and append data. 
+    + Open up a file to write in and append data.
     + Write headers
     + Clear HTML tag and insert text in array
     + Clear \r \n \t to prepare string variable to clear Narrations: and insert text in array
